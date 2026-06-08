@@ -1,0 +1,580 @@
+/* ==========================================
+   プレミアム・カラー＆ベース設定
+========================================== */
+:root {
+    --bg-dark: #111111;       /* 真っ黒ではなく、深みのある墨色 */
+    --accent: #A68A61;        /* 落ち着いたシャンパンゴールド */
+    --text-main: #D6CFC7;     /* 温かみのあるオフホワイト */
+    --text-muted: #888888;    /* 上品なグレー */
+    --line-color: rgba(166, 138, 97, 0.3); /* ゴールドの細い線 */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* 日本語は明朝体、英語はガラモンドで最高級の雰囲気に */
+    font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 2.2;
+    letter-spacing: 0.1em;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .section-en, .company-logo {
+    font-family: 'Cormorant Garamond', 'Shippori Mincho', serif;
+    font-weight: 400;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* 画像全体にうっすらフィルターをかけてトーンを統一 */
+img {
+    width: 100%;
+    display: block;
+    filter: grayscale(15%) contrast(1.1) brightness(0.9);
+    transition: filter 0.5s ease, transform 0.5s ease;
+}
+img:hover {
+    filter: grayscale(0%) contrast(1) brightness(1);
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px; /* あえて少し狭くして余白を強調 */
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.container-sm {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.section {
+    padding: 160px 0; /* セクション間の余白を大胆に広げる */
+}
+
+/* セクションタイトル周りのあしらい */
+.section-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.section-en {
+    display: block;
+    color: var(--accent);
+    font-size: 16px;
+    letter-spacing: 0.2em;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.section-title {
+    font-size: 32px;
+    letter-spacing: 0.15em;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 1px;
+    background-color: var(--accent);
+}
+
+/* ==========================================
+   ヒーローヘッダー（縦書き採用）
+========================================== */
+.hero-header {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-slider, .slide {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+}
+
+.slide {
+    background-size: cover; background-position: center; opacity: 0;
+    animation: sliderAnime 18s infinite ease-in-out;
+}
+.slide1 { background-image: url('images/photo1.jpg'); animation-delay: 0s; }
+.slide2 { background-image: url('images/photo2.jpg'); animation-delay: 6s; }
+.slide3 { background-image: url('images/photo3.jpg'); animation-delay: 12s; }
+
+@keyframes sliderAnime {
+    0% { opacity: 0; transform: scale(1.0); }
+    15% { opacity: 0.4; }
+    35% { opacity: 0.4; }
+    50% { opacity: 0; transform: scale(1.1); }
+    100% { opacity: 0; }
+}
+
+.hero-overlay {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, rgba(17,17,17,0.8) 0%, rgba(17,17,17,0.3) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.company-logo {
+    font-size: 40px;
+    letter-spacing: 0.3em;
+    color: #fff;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+/* 和モダンの要：縦書きキャッチコピー */
+.hero-catch-vertical {
+    writing-mode: vertical-rl;
+    font-size: 20px;
+    letter-spacing: 0.4em;
+    color: #fff;
+    height: 250px;
+    border-left: 1px solid var(--line-color);
+    padding-left: 20px;
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    color: var(--text-muted);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.scroll-down::after {
+    content: '';
+    width: 1px; height: 60px;
+    background-color: var(--line-color);
+}
+
+/* ==========================================
+   代表挨拶
+========================================== */
+.greeting-content {
+    text-align: center;
+    position: relative;
+}
+.greeting-content::before {
+    content: '“';
+    position: absolute;
+    top: -60px; left: 50%;
+    transform: translateX(-50%);
+    font-size: 100px;
+    color: rgba(166, 138, 97, 0.1);
+    font-family: 'Cormorant Garamond', serif;
+}
+.greeting-text {
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+.ceo-name {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+.name-large {
+    font-size: 20px;
+    color: var(--text-main);
+    margin-left: 15px;
+}
+
+/* ==========================================
+   居酒屋（ずらしレイアウト）
+========================================== */
+.overlap-layout {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 40px 0;
+}
+.overlap-img-box {
+    width: 60%;
+    position: relative;
+    z-index: 1;
+}
+.overlap-img {
+    height: 450px;
+    object-fit: cover;
+}
+.overlap-text-box {
+    width: 50%;
+    background: #181818; /* 背景から少しだけ浮かせた色 */
+    padding: 60px 50px;
+    position: absolute;
+    right: 0;
+    z-index: 2;
+    border: 1px solid #2a2a2a;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+.overlap-text-box h3 {
+    font-size: 28px;
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+
+/* ==========================================
+   こだわり（ジグザグ配置）
+========================================== */
+.feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 100px; /* 行と行の間を広く取る */
+}
+.feature-row {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+.feature-row.reverse {
+    flex-direction: row-reverse;
+}
+.feature-img-wrapper {
+    width: 55%;
+}
+.feature-img-wrapper img {
+    height: 350px;
+    object-fit: cover;
+}
+.feature-info {
+    width: 45%;
+}
+.feature-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    color: var(--line-color);
+    display: block;
+    margin-bottom: -10px;
+}
+.feature-info h4 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--text-main);
+}
+.feature-info p {
+    color: var(--text-muted);
+    font-size: 15px;
+}
+
+/* ==========================================
+   ギャラリー（洗練された余白）
+========================================== */
+.luxury-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+.gallery-item {
+    overflow: hidden;
+}
+.gallery-item img {
+    height: 300px;
+    object-fit: cover;
+}
+.gallery-item img:hover {
+    transform: scale(1.03);
+}
+
+/* ==========================================
+   フッター
+========================================== */
+.modern-footer {
+    padding: 80px 0 40px;
+    text-align: center;
+    border-top: 1px solid #222;
+}
+.footer-logo {
+    font-size: 24px;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+
+/* ==========================================
+   スマホ対応
+========================================== */
+@media (max-width: 768px) {
+    .section { padding: 80px 0; }
+    .hero-catch-vertical { height: 200px; font-size: 18px; }
+    
+    .overlap-layout { flex-direction: column; padding: 0; }
+    .overlap-img-box, .overlap-text-box { width: 100%; position: static; }
+    .overlap-text-box { padding: 40px 20px; transform: translateY(-40px); }
+    
+    .feature-row, .feature-row.reverse { flex-direction: column; gap: 30px; }
+    .feature-img-wrapper, .feature-info { width: 100%; }
+    
+    .luxury-gallery { grid-template-columns: 1fr; }
+}
+/* ==========================================
+   新設：上段ナビゲーションバー（電話・メール・予約）
+========================================== */
+.top-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: rgba(17, 17, 17, 0.8); /* 後ろの写真がうっすら透ける高級仕様 */
+    border-bottom: 1px solid var(--line-color);
+    padding: 12px 0;
+}
+.top-nav-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-contact {
+    display: flex;
+    gap: 24px;
+    font-size: 14px;
+    color: var(--text-main);
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 0.1em;
+}
+.nav-contact a {
+    transition: color 0.3s;
+}
+.nav-contact a:hover {
+    color: var(--accent);
+}
+.nav-btn-hotpepper {
+    background: #ff3366;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 8px 24px;
+    border-radius: 2px;
+    transition: opacity 0.3s;
+    letter-spacing: 0.05em;
+}
+.nav-btn-hotpepper:hover {
+    opacity: 0.8;
+}
+
+/* スマホ用の調整 */
+@media (max-width: 768px) {
+    .top-nav-inner {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .nav-contact {
+        font-size: 13px;
+        gap: 15px;
+    }
+}
+/* ==========================================
+   フッターの完成形デザイン
+========================================== */
+.modern-footer {
+    background: #0d0d0d;
+    padding: 80px 24px;
+    text-align: center;
+    border-top: 1px solid #222;
+}
+
+.footer-contact {
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.footer-tel, .footer-mail {
+    font-size: 16px;
+    color: var(--text-main);
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 0.1em;
+}
+
+.footer-tel a, .footer-mail a {
+    color: var(--text-main);
+    transition: color 0.3s;
+}
+
+.footer-tel a:hover, .footer-mail a:hover {
+    color: var(--accent);
+}
+
+.footer-btn-hotpepper {
+    display: inline-block;
+    border: 1px solid #ff3366;
+    color: #ff3366;
+    padding: 14px 40px;
+    border-radius: 2px;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    letter-spacing: 0.1em;
+}
+
+.footer-btn-hotpepper:hover {
+    background: #ff3366;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(255, 51, 102, 0.3);
+}
+
+.footer-logo {
+    font-size: 28px;
+    letter-spacing: 0.3em;
+    color: var(--accent);
+    margin: 20px auto; /* 左右をautoにすることで、親要素の中で必ず真ん中になる */
+    font-family: 'Cormorant Garamond', serif;
+    display: block; /* これが重要！ブロック要素として振る舞わせる */
+    text-align: center;
+}
+
+
+.copyright {
+    color: #555;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    margin-top: 20px;
+}
+/* ==========================================
+   フッター予約エリアの枠デザイン
+========================================== */
+.footer-contact {
+    /* 枠のデザイン追加 */
+    border: 1px solid var(--line-color);
+    padding: 50px 20px;
+    background: rgba(255, 255, 255, 0.02); /* 薄い背景色で浮き立たせる */
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+/* 枠内の文字を少し目立たせる */
+.footer-contact p {
+    margin: 0;
+}
+/* ==========================================
+   フッター予約エリア：高級感と視認性を極める
+========================================== */
+.footer-contact {
+    /* 枠のデザイン：金色で囲んで高級感を出す */
+    border: 1px solid var(--accent);
+    padding: 60px 30px;
+    background: rgba(166, 138, 97, 0.05); /* 金色の薄い背景 */
+    margin: 60px auto;
+    max-width: 600px; /* 枠の横幅を絞って視線を集める */
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3); /* 浮き出たような影 */
+}
+
+/* 枠の上に「RESERVATION」という小さなラベルを添える */
+.footer-contact::before {
+    content: "RESERVATION";
+    position: absolute;
+    top: -12px;
+    background: var(--bg-dark);
+    padding: 0 15px;
+    color: var(--accent);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+}
+
+.footer-btn-hotpepper {
+    display: inline-block;
+    background: var(--accent); /* ボタン自体を金色にしてクリックを促す */
+    color: var(--bg-dark);
+    padding: 18px 40px;
+    border-radius: 2px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.4s ease;
+    letter-spacing: 0.1em;
+    border: none;
+}
+
+.footer-btn-hotpepper:hover {
+    background: #fff;
+    color: var(--bg-dark);
+    transform: translateY(-3px); /* マウスオンで浮かび上がる */
+    box-shadow: 0 5px 20px rgba(166, 138, 97, 0.4);
+}
+/* ==========================================
+   スマホ専用：究極のモバイル最適化
+========================================== */
+@media (max-width: 768px) {
+    
+    /* 1. 全体のフォントをスマホ用に調整（少しだけ大きくして読みやすく） */
+    body {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    /* 2. セクションの余白を少し詰める（間延び防止） */
+    .section {
+        padding: 60px 0;
+    }
+
+    /* 3. ヒーローヘッダーの文字をスマホサイズに */
+    .company-logo {
+        font-size: 28px;
+    }
+    .hero-catch-vertical {
+        font-size: 16px;
+        height: 150px;
+    }
+
+    /* 4. フッターの予約エリアをスマホで完璧にする */
+    .footer-contact {
+        padding: 40px 20px;
+        margin: 40px 15px;
+        gap: 15px;
+    }
+    .footer-btn-hotpepper {
+        width: 100%; /* ボタンを横幅いっぱいに広げて押しやすく */
+        padding: 15px 0;
+        font-size: 15px;
+    }
+
+    /* 5. 代表挨拶の横幅をスマホで画面いっぱいに */
+    .container-sm, .container {
+        padding: 0 20px;
+    }
+}
