@@ -3,28 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>株式会社RICH WIN 公式サイト</title>
+    <title>株式会社RICH WIN | 鹿児島の居酒屋・BAR事業</title>
+    <meta name="description" content="株式会社RICH WINの公式サイト。鹿児島の居酒屋「旬菜 仁」やBAR「LumiA」「POLLUX」の情報を掲載中。">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Shippori+Mincho:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Shippori+Mincho:wght@400;600;800&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- ▼▼▼ ここから追加：上段の連絡先＆予約バー ▼▼▼ -->
-    <div class="top-nav">
-        <div class="top-nav-inner">
-            <div class="nav-contact">
-                <span class="nav-tel">TEL: <a href="tel:000-0000-0000">000-0000-0000</a></span>
-                <span class="nav-email">MAIL: <a href="mailto:info@richwin.co.jp">info@richwin.co.jp</a></span>
-            </div>
-            <div class="nav-btn-wrap">
-                <a href="【ホットペッパーのURL】" target="_blank" class="nav-btn-hotpepper">HOT PEPPERで予約</a>
+
+    <div class="loading-screen">
+        <div class="loading-logo">RICH WIN</div>
+        <div class="loading-line"></div>
+    </div>
+
+    <header class="glass-header">
+        <div class="header-inner">
+            <div class="logo-sm">RICH WIN</div>
+            <div class="header-right">
+                <a href="tel:099-000-0000" class="header-link">TEL: 099-000-0000</a>
+                <a href="【ホットペッパーのURL】" target="_blank" class="reserve-btn">RESERVE</a>
             </div>
         </div>
-    </div>
-    <!-- ▲▲▲ ここまで追加 ▲▲▲ -->
+    </header>
 
-    <header class="hero-header">
+    <div class="hero-section">
         <div class="hero-slider">
             <div class="slide slide1"></div>
             <div class="slide slide2"></div>
@@ -33,79 +38,74 @@
         <div class="hero-overlay"></div>
         
         <div class="hero-content">
-            <h1 class="company-logo">RICH WIN</h1>
-            <p class="hero-catch-vertical">食と空間で、<br>日常に特別なひとときを。</p>
+            <h1 class="main-title">RICH WIN</h1>
+            <div class="vertical-catch">
+                <span class="catch-line">日常に特別なひとときを。</span>
+                <span class="catch-line">食と空間で、</span>
+            </div>
         </div>
-        <div class="scroll-down"><span>SCROLL</span></div>
-    </header>
+        <div class="scroll-indicator">
+            <p>SCROLL</p>
+            <div class="line"></div>
+        </div>
+    </div>
 
     <main>
         <section class="section greeting-section">
-            <div class="container-sm">
-                <div class="section-header">
-                    <span class="section-en">Message</span>
-                    <h2 class="section-title">代表挨拶</h2>
+            <div class="container">
+                <div class="flex-layout">
+                    <div class="text-block">
+                        <span class="en-title">Philosophy</span>
+                        <h2 class="ja-title dark">想いを、紡ぐ。</h2>
+                        <p class="body-text">
+                            ここに代表の熱い想いを書き込みます。<br>
+                            ただ食事をする場所ではなく、人と人が交わり、<br>
+                            明日への活力が生まれるような温かい空間を。<br>
+                            それが私たちRICH WINの使命であり、誇りです。
+                        </p>
+                        <p class="signature">代表取締役 <span>丸田 康仁</span></p>
+                    </div>
                 </div>
-                <div class="greeting-content">
-                    <p class="greeting-text">
-                        ここに代表取締役の挨拶文が入ります。<br>
-                        居酒屋ビジネスを中心に、地域の皆様に愛されるお店作りを目指し、日々挑戦を続けてまいります。<br>
-                        ただお腹を満たす場所ではなく、明日への活力が生まれるような温かい空間を創造していくことが当社の使命です。
+            </div>
+        </section>
+
+        <section class="section izakaya-section parallax-bg">
+            <div class="glass-container">
+                <span class="en-title dark">Main Brand</span>
+                <h2 class="ja-title dark">居酒屋 旬菜 仁</h2>
+                <div class="izakaya-content">
+                    <p class="body-text">
+                        鹿児島の豊かな自然が育んだ厳選食材。<br>
+                        職人の技が光る逸品と、こだわりの銘酒。<br>
+                        和の趣を感じる上質な空間で、心ゆくまでご堪能ください。
                     </p>
-                    <p class="ceo-name">代表取締役 <span class="name-large">【社長の氏名】</span></p>
+                    <a href="【ホットペッパーのURL】" target="_blank" class="outline-btn">店舗詳細を見る</a>
                 </div>
             </div>
         </section>
 
-        <section class="section izakaya-section">
+        <section class="section bar-section">
             <div class="container">
-                <div class="section-header">
-                    <span class="section-en">Main Brand</span>
-                    <h2 class="section-title">居酒屋事業</h2>
+                <div class="center-header">
+                    <span class="en-title gold">Night Life</span>
+                    <h2 class="ja-title white">BAR事業</h2>
+                    <p class="white-text">洗練された大人のための、特別な夜を。</p>
                 </div>
-                
-                <div class="overlap-layout">
-                    <div class="overlap-img-box">
-                        <img src="images/photo4.jpg" alt="居酒屋メイン" class="overlap-img">
-                    </div>
-                    <div class="overlap-text-box">
-                        <h3>【居酒屋の店舗名】</h3>
-                        <p>ここに居酒屋の特徴やこだわりが入ります。厳選した食材と心地よい活気で、お客様をお迎えします。社長の熱い想いが詰まった、当社のコアとなる店舗です。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <section class="section features-section">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-en">Commitment</span>
-                    <h2 class="section-title">私たちのこだわり</h2>
-                </div>
-                
-                <div class="feature-list">
-                    <div class="feature-row">
-                        <div class="feature-img-wrapper"><img src="images/photo5.jpg" alt="料理"></div>
-                        <div class="feature-info">
-                            <span class="feature-num">01</span>
-                            <h4>厳選された食材</h4>
-                            <p>鹿児島の地場の食材や新鮮な魚介を活かした、自慢の一品を提供します。</p>
+                <div class="bar-cards">
+                    <div class="neon-card">
+                        <div class="card-img slide1"></div> <div class="card-body">
+                            <h3>BAR LumiA</h3>
+                            <p>ラグジュアリーな空間と、最高の一杯を。</p>
+                            <div class="invite-code">INVITATION CODE<br><span>LUMIA2026</span></div>
                         </div>
                     </div>
-                    <div class="feature-row reverse">
-                        <div class="feature-img-wrapper"><img src="images/photo6.jpg" alt="空間"></div>
-                        <div class="feature-info">
-                            <span class="feature-num">02</span>
-                            <h4>くつろぎの空間</h4>
-                            <p>接待やデート、ご友人との飲み会など、あらゆるシーンに合うお席をご用意。</p>
-                        </div>
-                    </div>
-                    <div class="feature-row">
-                        <div class="feature-img-wrapper"><img src="images/photo7.jpg" alt="お酒"></div>
-                        <div class="feature-info">
-                            <span class="feature-num">03</span>
-                            <h4>豊富なお酒</h4>
-                            <p>料理を引き立てる銘酒や、鹿児島の美味しい焼酎を多数取り揃えています。</p>
+                    <div class="neon-card">
+                        <div class="card-img slide2"></div>
+                        <div class="card-body">
+                            <h3>GAME & DARTS BAR POLLUX</h3>
+                            <p>ダーツやゲームで熱狂する、最高のエンタメ空間。</p>
+                            <div class="invite-code">INVITATION CODE<br><span>POLLUX2026</span></div>
                         </div>
                     </div>
                 </div>
@@ -114,36 +114,35 @@
 
         <section class="section gallery-section">
             <div class="container">
-                <div class="section-header">
-                    <span class="section-en">Gallery</span>
-                    <h2 class="section-title">風景</h2>
+                <div class="center-header">
+                    <span class="en-title dark">Gallery</span>
+                    <h2 class="ja-title dark">風景</h2>
                 </div>
-                <div class="luxury-gallery">
-                    <div class="gallery-item"><img src="images/photo8.jpg" alt="ギャラリー1"></div>
-                    <div class="gallery-item"><img src="images/photo9.jpg" alt="ギャラリー2"></div>
-                    <div class="gallery-item"><img src="images/photo10.jpg" alt="ギャラリー3"></div>
+                
+                <div class="masonry-grid">
+                    <div class="grid-item item-large"><img src="images/photo1.jpg" alt="風景1"></div>
+                    <div class="grid-item"><img src="images/photo2.jpg" alt="風景2"></div>
+                    <div class="grid-item"><img src="images/photo3.jpg" alt="風景3"></div>
+                    <div class="grid-item item-wide"><img src="images/photo1.jpg" alt="風景4"></div>
                 </div>
             </div>
         </section>
-
     </main>
 
-            <!-- フッター -->
-    <footer class="modern-footer">
-        <div class="container">
-            <!-- 追加：フッター用の連絡先＆予約エリア -->
-            <div class="footer-contact">
-                <p class="footer-tel">TEL: <a href="tel:000-0000-0000">000-0000-0000</a></p>
-                <p class="footer-mail">MAIL: <a href="mailto:info@richwin.co.jp">info@richwin.co.jp</a></p>
-                <a href="【ホットペッパーのURL】" target="_blank" class="footer-btn-hotpepper">HOT PEPPERで予約する</a>
-            </div>
-            
-            <p class="footer-logo">RICH WIN</p>
-            <p class="copyright">&copy; 2026 RICH WIN Inc. All Rights Reserved.</p>
+    <footer class="premium-footer">
+        <h2 class="footer-logo">RICH WIN</h2>
+        
+        <div class="footer-contact-info">
+            <p>TEL: <a href="tel:099-000-0000">099-000-0000</a></p>
+            <p>MAIL: <a href="mailto:info@richwin.co.jp">info@richwin.co.jp</a></p>
         </div>
-    </footer>
-            <p class="footer-logo">RICH WIN</p>
-            <p class="copyright">&copy; 2026 RICH WIN Inc. All Rights Reserved.</p>
+
+        <div class="footer-reserve-wrapper">
+            <a href="【ホットペッパーのURL】" target="_blank" class="footer-reserve">HOT PEPPER グルメで予約</a>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 RICH WIN Inc. All Rights Reserved.</p>
         </div>
     </footer>
 
