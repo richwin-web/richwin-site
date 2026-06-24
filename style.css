@@ -161,9 +161,9 @@ img {
 }
 
 /* imagesフォルダの写真を参照 */
-.slide1 { background-image: url('images/photo1.jpg'); animation-delay: 0s; }
-.slide2 { background-image: url('images/photo2.jpg'); animation-delay: 6s; }
-.slide3 { background-image: url('images/photo3.jpg'); animation-delay: 12s; }
+.slide1 { background-image: url('images/photo1.JPG'); animation-delay: 0s; }
+.slide2 { background-image: url('images/photo2.JPG'); animation-delay: 6s; }
+.slide3 { background-image: url('images/photo3.JPG'); animation-delay: 12s; }
 
 @keyframes cinematicSlider {
     0% { opacity: 0; transform: scale(1); }
@@ -266,7 +266,7 @@ img {
    居酒屋（パララックス＆グラスモーフィズム）
 =================================== */
 .izakaya-section.parallax-bg {
-    background-image: url('images/photo1.jpg'); /* 背景固定用の写真 */
+    background-image: url('images/photo12.JPG'); /* 背景固定用の写真 */
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
